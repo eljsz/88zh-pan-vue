@@ -15,12 +15,12 @@ import {getCurrentInstance, reactive} from "vue";
 const {proxy} = getCurrentInstance();
 
 var links = reactive([]);
-proxy.$axios
-    .get("/link/getLink")
-    .then((res) => {
-      //请求成功
-      links.value = res.data
-    })
+// proxy.$axios
+//     .get("/link/getLink")
+//     .then((res) => {
+//       //请求成功
+//       links.value = res.data
+//     })
 </script>
 
 <style scoped>

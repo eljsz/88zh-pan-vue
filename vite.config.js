@@ -23,7 +23,7 @@ export default defineConfig({
         proxy: {
             '/api': { //apiTest是自行设置的请求前缀，按照这个来匹配请求，有这个字段的请求，就会进到代理来
                 // target: 'http://api.88zh.top',
-                target: 'http://localhost:8080',
+                target: 'http://127.0.0.1:5000',
                 changeOrigin: true, //是否跨域
                 // rewrite: (path) => path.replace('/api', '')
             }

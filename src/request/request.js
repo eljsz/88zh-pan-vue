@@ -1,5 +1,6 @@
 import axios from "axios";
 import qs from "qs";
+import {ElMessage} from "element-plus";
 
 // axios.defaults.baseURL = 'http://blogapi.jzwl8.cn/api/front/' //正式
 axios.defaults.baseURL = '/api/'  //测试
@@ -23,20 +24,13 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
     response => {
-        if (response.status == 200) {
+        console.log(response)
+        if (response.status === 200) {
             return Promise.resolve(response);
-        } else {
-            return Promise.reject(response);
         }
     },
     error => {
-
-        // alert(JSON.stringify(error), '请求异常', {
-        //     confirmButtonText: '确定',
-        //     callback: (action) => {
-        //         console.log(action)
-        //     }
-        // });
+        ElMessage.error('错误信息，请稍后再试试！')
     }
 );
 export default {

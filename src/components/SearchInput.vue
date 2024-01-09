@@ -5,10 +5,6 @@
         @input="$emit('input', $event)"
         v-bind="$attrs"
         size="large"
-        @mouseenter="hovering = true"
-        @mouseleave="hovering = false"
-        @focus="handleFocus"
-        @blur="handleBlur"
         @keyup.native.enter="handleEnter"
     >
 <!--      <i slot="prefix"><img :src="CommonImg.search" alt=""></i>-->

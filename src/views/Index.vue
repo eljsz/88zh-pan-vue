@@ -9,31 +9,20 @@
       ></el-input>
     </div>
     <div style="margin: 0 50px">
-      <!--      <el-tabs v-if="activeName" v-model="activeName" class="demo-tabs" @tab-change="handleChange">-->
-      <!--        <el-tab-pane v-for="tab in tabsList.value" :label="tab.split('&')[0]" :name="tab.split('&')[1]">-->
 
       <el-card class="box-card"  v-for="(tab,index) in tabsList.value" :key="index">
         <div slot="header" class="clearfix" style="padding: 10px;">
           <span>{{ tab.split('&')[0] }}</span>
         </div>
         <el-scrollbar height="500px" v-loading="isLoading[tab.split('&')[1]]">
-          <!--        <el-scrollbar :height="tableData.value[index]? '200px' : '250px'" >-->
           <div class="text item" v-for="item in tableData[tab.split('&')[1]]" :key="item.id">
             <el-link class="text item" @click="goArticle(item.url)">{{ item.title }}</el-link>
           </div>
         </el-scrollbar>
       </el-card>
-
-
-      <!--        </el-tab-pane>-->
-      <!--      </el-tabs>-->
     </div>
 
   </div>
-  <!--  <div style="clear:both">-->
-  <!--    <Link/>-->
-  <!--    <Footer/>-->
-  <!--  </div>-->
 </template>
 
 <script setup>

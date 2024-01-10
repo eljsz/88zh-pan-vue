@@ -10,7 +10,7 @@
     </div>
     <div style="margin: 0 50px">
 
-      <el-card :class="isMobile?'box-card-mobile':'box-card'"  v-for="(tab,index) in tabsList.value" :key="index">
+      <el-card :class="hasTouchScreen?'box-card-mobile':'box-card'"  v-for="(tab,index) in tabsList.value" :key="index">
         <div slot="header" class="clearfix" style="padding: 10px;">
           <span>{{ tab.split('&')[0] }}</span>
         </div>
@@ -29,9 +29,19 @@
 import {useRoute, useRouter} from "vue-router";
 import {getCurrentInstance, onBeforeMount, onMounted, reactive, watch} from "vue";
 import {ref} from 'vue'
-import { useMobileDetection } from "vue3-mobile-detection";
 
-const { isMobile } = useMobileDetection();
+var hasTouchScreen = false;
+if ("maxTouchPoints" in navigator) {
+  hasTouchScreen = navigator.maxTouchPoints > 0;
+}
+if (hasTouchScreen) {
+  // 用户在移动设备上
+  console.log("Mobile device");
+} else {
+  // 用户不在移动设备上
+  console.log("Not a mobile device");
+}
+
 
 const {proxy} = getCurrentInstance();
 const route = useRoute()

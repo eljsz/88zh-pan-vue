@@ -10,7 +10,7 @@
     </div>
     <div style="margin: 0 50px">
 
-      <el-card class="box-card"  v-for="(tab,index) in tabsList.value" :key="index">
+      <el-card :class="isMobile?'box-card-mobile':'box-card'"  v-for="(tab,index) in tabsList.value" :key="index">
         <div slot="header" class="clearfix" style="padding: 10px;">
           <span>{{ tab.split('&')[0] }}</span>
         </div>
@@ -29,8 +29,9 @@
 import {useRoute, useRouter} from "vue-router";
 import {getCurrentInstance, onBeforeMount, onMounted, reactive, watch} from "vue";
 import {ref} from 'vue'
-import SearchInput from "@/components/SearchInput.vue";
+import { useMobileDetection } from "vue3-mobile-detection";
 
+const { isMobile } = useMobileDetection();
 
 const {proxy} = getCurrentInstance();
 const route = useRoute()
@@ -141,5 +142,8 @@ html, body {
   margin: 12px;
   width: 30%;
 
+}
+.box-card-mobile{
+  margin: 20px 0;
 }
 </style>

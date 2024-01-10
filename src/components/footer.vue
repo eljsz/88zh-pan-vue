@@ -1,7 +1,7 @@
 <template>
   <div class="bottom">
     <p class="bottom_text">
-      本站分享的所有资源来源于公开互联网搜集和网友投稿提供，仅供个人学习研究使用，若发现您的权利被侵害，请联系dmwl9116@gmail.com，我们会尽快处理</p>
+      本站分享的所有资源来源于公开互联网搜集和网友投稿提供，仅供个人学习研究使用，若发现您的权利被侵害，请联系，我们会尽快处理</p>
     <P class="bottom_text">Copyright © 2022-2023 88整合库</P>
   </div>
 </template>

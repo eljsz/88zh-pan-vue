@@ -2,7 +2,6 @@ import axios from "axios";
 import qs from "qs";
 import {ElMessage} from "element-plus";
 
-// axios.defaults.baseURL = 'http://blogapi.jzwl8.cn/api/front/' //正式
 axios.defaults.baseURL = '/api/'  //测试
 
 //post请求头
@@ -11,7 +10,7 @@ axios.defaults.headers["Access-Control-Allow-Origin"] = "*";
 //允许跨域携带cookie信息
 axios.defaults.withCredentials = true;
 //设置超时
-axios.defaults.timeout = 15000;
+axios.defaults.timeout = 20000;
 
 axios.interceptors.request.use(
     config => {
